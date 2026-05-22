@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZOXE Content Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+    }
+
+    body {
+      background-color: #FAFAFA;
+      color: #000000;
+      font-family: 'Noto Sans TC', 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 80px 72px;
+      position: relative;
+    }
+
+    /* Subtle warm top border */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #C5B392 0%, #D4C4A8 100%);
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      color: #C5B392;
+      text-transform: uppercase;
+    }
+
+    .card-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #999999;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Content area */
+    .content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      padding: 60px 0 48px;
+    }
+
+    .title {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #000000;
+      margin-bottom: 48px;
+      letter-spacing: -0.01em;
+      word-break: break-word;
+    }
+
+    /* Points list */
+    .points-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .point-number {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #000000;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .point-text {
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #222222;
+      flex: 1;
+      word-break: break-word;
+    }
+
+    .point-text strong {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    /* Bottom bar */
+    .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid #E5E5E5;
+      padding-top: 28px;
+    }
+
+    .footer-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      color: #999999;
+      letter-spacing: 0.02em;
+    }
+
+    .accent-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: #00EFB0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <span class="brand-logo">ZOXE</span>
+    <span class="card-label">知識分享</span>
+  </div>
+
+  <!-- Content area -->
+  <div class="content-area">
+    <h2 class="title">{{TITLE}}</h2>
+
+    <div class="points-list" id="points-list">
+      <!-- Points injected via template replacement -->
+      {{POINTS_HTML}}
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <span class="footer-text">{{FOOTER}}</span>
+    <div class="accent-dot"></div>
+  </div>
+
+</body>
+</html>

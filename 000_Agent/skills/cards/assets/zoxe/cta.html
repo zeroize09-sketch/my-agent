@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZOXE CTA Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+    }
+
+    body {
+      background-color: #111111;
+      color: #FAFAFA;
+      font-family: 'Noto Sans TC', 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 80px 72px;
+      position: relative;
+    }
+
+    /* Accent glow at bottom */
+    body::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse at bottom, rgba(0, 239, 176, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      color: #C5B392;
+      text-transform: uppercase;
+    }
+
+    .step-indicator {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: rgba(250, 250, 250, 0.35);
+      letter-spacing: 0.04em;
+    }
+
+    /* Center content */
+    .center-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+      padding: 80px 0;
+    }
+
+    .pre-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #00EFB0;
+      margin-bottom: 28px;
+    }
+
+    .title {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 48px;
+      word-break: break-word;
+    }
+
+    /* CTA button */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #00EFB0;
+      color: #000000;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 239, 176, 0.25);
+      letter-spacing: 0.02em;
+    }
+
+    .cta-arrow {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    /* Bottom bar */
+    .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 32px;
+    }
+
+    .handle {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #C5B392;
+      letter-spacing: 0.04em;
+    }
+
+    .tagline {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 14px;
+      color: rgba(250, 250, 250, 0.4);
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <span class="brand-logo">ZOXE</span>
+    <span class="step-indicator">零式設計</span>
+  </div>
+
+  <!-- Center content -->
+  <div class="center-content">
+    <div class="pre-label">行動呼籲</div>
+    <h2 class="title">{{TITLE}}</h2>
+    <div class="cta-button">
+      <span>{{CTA_TEXT}}</span>
+      <span class="cta-arrow">→</span>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <span class="handle">{{HANDLE}}</span>
+    <span class="tagline">室內設計師的品牌夥伴</span>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "zoxe-card-screenshot",
+  "version": "1.0.0",
+  "description": "ZOXE 社群圖卡截圖腳本",
+  "type": "module",
+  "scripts": {
+    "screenshot": "node screenshot.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

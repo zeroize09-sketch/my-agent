@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZOXE Cover Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 1080px;
+      height: 1350px;
+      overflow: hidden;
+    }
+
+    body {
+      background-color: #111111;
+      color: #FAFAFA;
+      font-family: 'Noto Sans TC', 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 80px 72px;
+      position: relative;
+    }
+
+    /* Background texture: subtle diagonal lines */
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(
+        135deg,
+        rgba(197, 179, 146, 0.03) 0px,
+        rgba(197, 179, 146, 0.03) 1px,
+        transparent 1px,
+        transparent 60px
+      );
+      pointer-events: none;
+    }
+
+    /* Top bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.08em;
+      color: #C5B392;
+      text-transform: uppercase;
+    }
+
+    .tag-pill {
+      background: rgba(197, 179, 146, 0.15);
+      border: 1px solid rgba(197, 179, 146, 0.3);
+      border-radius: 9999px;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #C5B392;
+      letter-spacing: 0.04em;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Center content */
+    .center-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      padding: 80px 0 60px;
+    }
+
+    /* Accent line */
+    .accent-line {
+      width: 48px;
+      height: 4px;
+      background: #00EFB0;
+      border-radius: 2px;
+      margin-bottom: 40px;
+    }
+
+    .title {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 32px;
+      word-break: break-word;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(250, 250, 250, 0.65);
+      max-width: 780px;
+      word-break: break-word;
+    }
+
+    /* Bottom bar */
+    .bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 32px;
+    }
+
+    .handle {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      color: rgba(250, 250, 250, 0.4);
+      letter-spacing: 0.02em;
+    }
+
+    .dot-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+    }
+
+    .dot.active { background: #00EFB0; }
+    .dot.inactive { background: rgba(255, 255, 255, 0.2); }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <span class="brand-logo">ZOXE</span>
+    <span class="tag-pill">{{TAG}}</span>
+  </div>
+
+  <!-- Center content -->
+  <div class="center-content">
+    <div class="accent-line"></div>
+    <h1 class="title">{{TITLE}}</h1>
+    <p class="subtitle">{{SUBTITLE}}</p>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <span class="handle">@zoxe.design</span>
+    <div class="dot-row">
+      <div class="dot active"></div>
+      <div class="dot inactive"></div>
+      <div class="dot inactive"></div>
+    </div>
+  </div>
+
+</body>
+</html>
